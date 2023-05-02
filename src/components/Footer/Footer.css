@@ -1,0 +1,17 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #2d545e;
+    color: #fff;
+}
+
+.footer-content nav {
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-content nav a {
+    color:  #e1b382;
+}
