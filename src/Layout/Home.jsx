@@ -1,11 +1,13 @@
 import React from "react";
 import Header from "../components/Banner/Header";
 import './Home.css'
+import Cards from "../components/Cards/Cards";
 
 const Home = () => {
   return (
     <div>
       <Header></Header>
+      <Cards></Cards>
       <section className="extra-section">
         <h2>Our Mission</h2>
         <p>
