@@ -13,6 +13,7 @@ a:hover {
 
 body {
   margin: 0;
+  padding: 0;
   min-width: 100%;
   min-height: 100vh;
 }
@@ -21,10 +22,10 @@ button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 1em;
+  font-size: 0.5em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #a35d5da9;
+  background-color: #c89666;
   cursor: pointer;
   transition: border-color 0.25s;
 }
