@@ -16,6 +16,7 @@ const SignUp = () => {
       const email = form.email.value;
       const password = form.password.value;
       const confirm = form.confirm.value;
+    //   const photoUrl = form.photoUrl.value;
   
       // console.log(email,password,confirm)
   
@@ -23,7 +24,7 @@ const SignUp = () => {
         setError("password doesn't match!");
         return;
       } else if (password < 6) {
-        setError("password length should be atleast 4 character");
+        setError("password length should be atleast 6 character");
       }
   
       createUser(email, password)
@@ -53,6 +54,10 @@ const SignUp = () => {
             <label htmlFor="password">Confirm Password</label>
             <input type="password" name="confirm" id="" required />
           </div>
+          <div className="form-control">
+          <label htmlFor="photoUrl">Photo URL</label>
+          <input type="text" name="photoUrl" id="" />
+        </div>
           <input className="btn-submit" type="submit" value="Sign Up" />
   
           <p>

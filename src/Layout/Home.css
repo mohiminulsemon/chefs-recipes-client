@@ -1,0 +1,13 @@
+.extra-section{
+    background-color: #e1b382;
+    text-align: center;
+    padding: 20px;
+    width: 50%;
+    margin: 20px auto ;
+    color: white;
+    box-shadow: 10px 10px #2d545e;
+}
+
+.extra-section h2{
+    color: #2d545e;
+}

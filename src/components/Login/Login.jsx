@@ -58,7 +58,7 @@ const Login = () => {
         <input className="btn-submit" type="submit" value="Login" />
         <p>
           <small>
-            New to Ema-john? <Link to="/signup">Create New Account</Link>
+            New to website? <Link to="/signup">Create New Account</Link>
           </small>
         </p>
       </form>

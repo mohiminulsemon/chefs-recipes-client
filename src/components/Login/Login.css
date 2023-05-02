@@ -1,6 +1,6 @@
 .form-container {
     width: 400px;
-    height: 500px;
+    height: fit-content;
     margin: 20px auto;
     border: 1px solid #95A0A7;
     border-radius: 8px;

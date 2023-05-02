@@ -1,21 +1,34 @@
-import React from 'react';
-
-import { Outlet } from 'react-router-dom';
-import Header from '../components/Banner/Header';
-import Footer from '../components/Footer/Footer';
-import Nav from '../components/Nav/Nav';
-
-
+import React from "react";
+import Header from "../components/Banner/Header";
+import './Home.css'
 
 const Home = () => {
-    return (
-        <div>
-            <Nav></Nav>
-            <Header ></Header>
-            <Outlet></Outlet>
-            <Footer></Footer>
-        </div>
-    );
+  return (
+    <div>
+      <Header></Header>
+      <section className="extra-section">
+        <h2>Our Mission</h2>
+        <p>
+          At Chef's Kitchen, we're dedicated to bringing you the best recipes
+          from professional chefs around the world. Our mission is to inspire
+          you to try new dishes and improve your cooking skills.
+        </p>
+      </section>
+      <section className="extra-section">
+        <h2>Join Our Community</h2>
+        <p>
+          Sign up for our newsletter and get the latest recipes, cooking tips,
+          and exclusive offers delivered straight to your inbox. You'll also get
+          access to our online community where you can share your own recipes
+          and connect with other foodies.
+        </p>
+        <form action="">
+            <label htmlFor=" ">enter your email :</label>
+            <input type="email" id="enter your email : "></input>
+        </form>
+      </section>
+    </div>
+  );
 };
 
 export default Home;

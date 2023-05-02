@@ -26,6 +26,7 @@ button {
   font-weight: 500;
   font-family: inherit;
   background-color: #c89666;
+  color: #fff;
   cursor: pointer;
   transition: border-color 0.25s;
 }
