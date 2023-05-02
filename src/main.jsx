@@ -3,17 +3,26 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./Layout/Home";
+import Blog from "./components/Blog/Blog";
 
 const router = createBrowserRouter([
   {
   path: '/',
   element: <Home></Home>,
-  // children: [
-  //   {
-  //     path: '/',
-  //     element: 
-  //   }
-  //   ]
+  children: [
+    {
+      path: '/blog',
+      element: <Blog></Blog>
+    },
+    {
+      path: '/login',
+      element: <></>
+    },
+    {
+      path: '/signup',
+      element: <Blog></Blog>
+    }
+    ]
   }
   ]);
 
