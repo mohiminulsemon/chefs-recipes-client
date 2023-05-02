@@ -1,0 +1,17 @@
+.header {
+  height: 90vh;
+  background-size: cover;
+  background-image:linear-gradient(#00000080, #00000080),  url("https://st2.depositphotos.com/3889193/7173/i/950/depositphotos_71739083-stock-photo-healthy-vegetarian-home-made-food.jpg");
+  
+  
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner-content {
+  text-align: center;
+  color: #c9b6a2;
+  font-size: 2rem;
+}
