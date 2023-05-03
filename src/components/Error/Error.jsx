@@ -16,7 +16,7 @@ const Error = () => {
         </h2>
         <p>{error?.message}</p>
         <Link to="/">
-          <button>Back to Homepage</button>
+          <button className="btn">Back to Homepage</button>
         </Link>
       </div>
     </div>

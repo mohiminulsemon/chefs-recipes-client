@@ -6,7 +6,7 @@ const Header = () => {
       <div className="banner-content">
         <h1>Welcome to Chef's Recipes</h1>
         <p>Discover delicious recipes from a professional chef</p>
-        <button>View more</button>
+        <button className='btn'>View more</button>
       </div>
     </header>
     );

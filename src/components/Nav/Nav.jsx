@@ -25,7 +25,7 @@ const Nav = () => {
         {user ? (
           <span className="profile">
             <img src={user.photoURL} alt="" />
-            <button className="button" onClick={handleLogOut}>
+            <button className="btn" onClick={handleLogOut}>
               SignOut
             </button>
           </span>

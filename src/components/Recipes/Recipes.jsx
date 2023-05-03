@@ -45,22 +45,23 @@ const Recipes = () => {
         )}
         <h3>{name}</h3>
         <p>{bio}</p>
-        <p>Years of experience: {experience}</p>
-        <p>Number of chef: {numbers_of_recipes}</p>
-        <p>Likes: {likes}</p>
+        <p><span className="method">Years of experience:</span> {experience}</p>
+        <p><span className="method">Number of recipes:</span> {numbers_of_recipes}</p>
+        <p><span className="method">Likes:</span> {likes}</p>
       </div>
 
       {recipes ? (
-        <div>
+        <div className="recipes">
           {recipes.map((recipe) => (
-            <div className="card" key={recipe.id}>
+            <div className="recipe" key={recipe.id}>
               <h3>{recipe.name}</h3>
               <ul>
                 {recipe.ingredients.map((ingredient, index) => (
                   <li key={index}>{ingredient}</li>
                 ))}
               </ul>
-              <p>Rating: {recipe.rating}</p>
+              <p><span className="method">Cooking method:</span> {recipe.cooking_method}</p>
+              <p><span className="method">Rating:</span> {recipe.rating} star</p>
               <button onClick={onToggleFavorite}>
                 {isFavorite ? "Remove Favorite" : "Add Favorite"}
               </button>
