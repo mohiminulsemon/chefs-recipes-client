@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import "./Login.css";
@@ -6,6 +6,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
   const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
+  const [error, setError] = useState('');
 
   const navigate = useNavigate();
   const location = useLocation();
@@ -17,7 +18,7 @@ const Login = () => {
       const form = event.target;
       const email = form.email.value;
       const password = form.password.value;
-      console.log(email, password);
+      // console.log(email, password)
 
       signIn(email, password)
           .then(result => {
@@ -77,6 +78,7 @@ const Login = () => {
             New to website? <Link to="/signup">Create New Account</Link>
           </small>
         </p>
+        <p>{error}</p>
       </form>
     </div>
   );

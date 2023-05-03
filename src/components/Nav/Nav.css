@@ -29,3 +29,20 @@ nav.Nav a:hover{
     background-color: #FFFFFF;
     color: black;
 }
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.profile img{
+    width: 30%;
+    border-radius: 50%;
+}
+.navigation {
+    display: flex;
+}
+
+.Nav a.active {
+    color: red;
+  }
