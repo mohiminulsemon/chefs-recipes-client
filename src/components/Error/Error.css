@@ -1,0 +1,11 @@
+.error img{
+    width: 25%;
+}
+
+.error{
+    text-align: center;
+}
+
+.error-text{
+    font-size: 20px;
+}
