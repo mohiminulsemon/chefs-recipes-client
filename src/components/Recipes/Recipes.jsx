@@ -19,8 +19,9 @@ const Recipes = () => {
       });
   }, []);
 
+  const {picture,name,bio,experience,numbers_of_recipes,likes , recipes} = chef;
   // console.log(chef)
-  // console.log(chef.recipes[0]);
+  console.log(recipes);
 
 //   console.log(id);
   return (
@@ -31,13 +32,13 @@ const Recipes = () => {
             <div className="loader">
               <Circles size={100} color="#00BFFF" loading={isLoading} />
             </div>
-          ): <img src={chef.picture} alt={chef.name} />
+          ): <img src={picture} alt={name} />
         }
-          <h3>{chef.name}</h3>
-          <p>{chef.bio}</p>
-          <p>Years of experience: {chef.experience}</p>
-          <p>Number of chef: {chef.numbers_of_recipes}</p>
-          <p>Likes: {chef.likes}</p>
+          <h3>{name}</h3>
+          <p>{bio}</p>
+          <p>Years of experience: {experience}</p>
+          <p>Number of chef: {numbers_of_recipes}</p>
+          <p>Likes: {likes}</p>
         </div>
 
         {

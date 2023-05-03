@@ -37,7 +37,10 @@ const router = createBrowserRouter([
       {
         path: "/:id",
         element: 
-          <Recipes></Recipes>,
+          // <Recipes></Recipes>,
+          <PrivateRoute>
+            <Recipes></Recipes>
+          </PrivateRoute>,
         
       }
     ],

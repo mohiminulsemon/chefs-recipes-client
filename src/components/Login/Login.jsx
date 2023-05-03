@@ -6,11 +6,11 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
   const { signIn, signInWithGoogle, signInWithGithub } = useContext(AuthContext);
-  const [error, setError] = useState('');
+  // const [error, setError] = useState('');
 
   const navigate = useNavigate();
   const location = useLocation();
-  console.log('login page location', location)
+  // console.log('login page location', location)
   const from = location.state?.from?.pathname || '/'
 
   const handleLogin = event => {
@@ -78,7 +78,7 @@ const Login = () => {
             New to website? <Link to="/signup">Create New Account</Link>
           </small>
         </p>
-        <p>{error}</p>
+        {/* <p>{error}</p> */}
       </form>
     </div>
   );
