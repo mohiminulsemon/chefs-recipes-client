@@ -16,7 +16,7 @@ const Nav = () => {
     <nav className="Nav">
       <h2>Chef's Recipes</h2>
       <div>
-        <Link to="/home">Home</Link>
+        <Link to="/">Home</Link>
         <Link to="/blog">Blog</Link>
         <Link to="/login">Login</Link>
         <Link to="/signup">Sign Up</Link>
