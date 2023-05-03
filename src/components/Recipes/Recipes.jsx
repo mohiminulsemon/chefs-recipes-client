@@ -21,7 +21,7 @@ const Recipes = () => {
 
   const {picture,name,bio,experience,numbers_of_recipes,likes , recipes} = chef;
   // console.log(chef)
-  console.log(recipes?recipes[0]:recipes);
+  // console.log(recipes?recipes[0]:recipes);
 
 //   console.log(id);
   return (

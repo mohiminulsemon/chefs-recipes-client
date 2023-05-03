@@ -1,7 +1,12 @@
 .blog{
     width: 80%;
-    margin: 10% auto;
+    margin: 10px auto 10px auto;
     border: 2px solid black;
     border-radius: 5px;
     padding: 8px;
+}
+
+.pdf{
+    margin-top: 20px;
+    text-align: center;
 }
