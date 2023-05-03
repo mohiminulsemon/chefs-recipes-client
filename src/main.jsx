@@ -8,6 +8,8 @@ import Login from "./components/Login/Login";
 import SignUp from "./components/SignUp/SignUp";
 import AuthProvider from "./providers/AuthProvider";
 import Layout from "./Layout/Layout";
+import Recipes from "./components/Recipes/Recipes";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,12 @@ const router = createBrowserRouter([
         path: "/signup",
         element: <SignUp></SignUp>,
       },
+      {
+        path: "/:id",
+        element: <PrivateRoute>
+          <Recipes></Recipes>
+        </PrivateRoute>,
+      }
     ],
   },
 ]);

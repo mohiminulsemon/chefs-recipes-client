@@ -6,17 +6,20 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 const SignUp = () => {
     const [error, setError] = useState("");
-    const { createUser } = useContext(AuthContext);
+    const { createUser , userprofilepic } = useContext(AuthContext);
   
     const handleSignUp = (event) => {
       // for preventing reload of form input
       event.preventDefault();
   
       const form = event.target;
+      const name = form.name.value;
       const email = form.email.value;
       const password = form.password.value;
       const confirm = form.confirm.value;
-    //   const photoUrl = form.photoUrl.value;
+      const photoUrl = form.photoUrl.value;
+
+      console.log(photoUrl)
   
       // console.log(email,password,confirm)
   
@@ -36,12 +39,24 @@ const SignUp = () => {
           console.log(error);
           setError(error.message);
         });
+        userprofilepic(name, photoUrl)
+        .then((result) => {
+            console.log(result);
+          })
+          .catch((error) => {
+            console.log(error);
+            setError(error.message);
+          });
     };
   
     return (
       <div className="form-container">
         <h2 className="form-title">Sign Up</h2>
         <form onSubmit={handleSignUp} action="">
+        <div className="form-control">
+            <label htmlFor="name">Name</label>
+            <input type="text" name="name" id="" required />
+          </div>
           <div className="form-control">
             <label htmlFor="email">Email</label>
             <input type="email" name="email" id="" required />
