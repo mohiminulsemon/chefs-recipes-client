@@ -11,7 +11,7 @@ const Home = () => {
       <section className="extra-section">
         <h2>Our Mission</h2>
         <p>
-          At Chef's Kitchen, we're dedicated to bringing you the best recipes
+          At Chef's Recipes, we're dedicated to bringing you the best recipes
           from professional chefs around the world. Our mission is to inspire
           you to try new dishes and improve your cooking skills.
         </p>
