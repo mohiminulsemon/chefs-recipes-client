@@ -1,44 +1,50 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from "firebase/auth";
-import { app } from '../firebase/firebase.config';
-
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import app from '../firebase/firebase.config';
 
 export const AuthContext = createContext(null);
+const googleAuthProvider = new GoogleAuthProvider();
+const githubAuthProvider = new GithubAuthProvider();
 
 const auth = getAuth(app);
 
-const AuthProvider = ({children}) => {
-    const [user, setUser ] = useState(null);
+const AuthProvider = ({ children }) => {
+
+    const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const createUser = (email, password , Userphoto) => {
+    const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password);
     }
-const userprofilepic = (Username,picture)=>{
-    return updateProfile(auth, createUser , {
-        displayName: Username , photoURL: picture
-      })
-}
+
     const signIn = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
-    
-    const logOut = () =>{
+    const signInWithGoogle = () => {
+        setLoading(true);
+        signInWithPopup(auth, googleAuthProvider)
+    }
+    const signInWithGithub = () => {
+        setLoading(true);
+        signInWithPopup(auth, githubAuthProvider)
+    }
+
+    const logOut = () => {
+        setLoading(true);
         return signOut(auth);
     }
 
-    // observer user auth state 
-    useEffect( ()=>{
-        const unsubscribe = onAuthStateChanged(auth, currentUser => {
-            setUser(currentUser);
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, loggedUser => {
+            // console.log('logged in user inside auth state observer', loggedUser)
+            setUser(loggedUser);
             setLoading(false);
-        });
+        })
 
-        // stop observing while unmounting 
-        return () =>{
-            return unsubscribe();
+        return () => {
+            unsubscribe();
         }
     }, [])
 
@@ -47,8 +53,9 @@ const userprofilepic = (Username,picture)=>{
         loading,
         createUser,
         signIn,
-        logOut,
-        userprofilepic
+        signInWithGoogle,
+        signInWithGithub,
+        logOut
     }
 
     return (

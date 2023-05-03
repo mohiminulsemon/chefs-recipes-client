@@ -48,10 +48,9 @@
     border-radius: 5px;
     border: none;
     margin-top: 20px;
-    font-size: 21px;
-    line-height: 25px;
-    letter-spacing: 0.0015em;
+    font-size: 18px;
     color: #0E161A;
+    text-align: center;
 }
 
 .btn-submit:hover {

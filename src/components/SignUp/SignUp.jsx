@@ -1,58 +1,56 @@
 import { useContext, useState } from 'react';
 import './SignUp.css'
-import { Link } from 'react-router-dom';
+import { Link , useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
 
 
 const SignUp = () => {
-    const [error, setError] = useState("");
-    const { createUser , userprofilepic } = useContext(AuthContext);
-  
-    const handleSignUp = (event) => {
-      // for preventing reload of form input
+  const { createUser } = useContext(AuthContext);
+
+  const [error, setError] = useState('');
+
+  const navigate = useNavigate();
+  const location = useLocation();
+  // console.log('register page location', location)
+
+  const from = location.state?.from?.pathname || '/';
+  // console.log(from);
+
+  const handleRegister = event => {
       event.preventDefault();
-  
+      setError();
+
       const form = event.target;
       const name = form.name.value;
+      const photo = form.photo.value;
       const email = form.email.value;
       const password = form.password.value;
-      const confirm = form.confirm.value;
-      const photoUrl = form.photoUrl.value;
 
-      console.log(photoUrl)
-  
-      // console.log(email,password,confirm)
-  
-      if (password !== confirm) {
-        setError("password doesn't match!");
-        return;
-      } else if (password < 6) {
-        setError("password length should be atleast 6 character");
+      // console.log(name, photo, email, password)
+
+      //validation
+      
+      if (password.length < 6) {
+          setError('Please add at least 6 characters in your password');
+          return;
       }
-  
+
       createUser(email, password)
-        .then((result) => {
-          const loggedUser = result.user;
-          console.log(loggedUser);
-        })
-        .catch((error) => {
-          console.log(error);
-          setError(error.message);
-        });
-        userprofilepic(name, photoUrl)
-        .then((result) => {
-            console.log(result);
+          .then(result => {
+              const createdUser = result.user;
+              console.log(createdUser);
+              setError('');
+              navigate(from, { replace: true })
           })
-          .catch((error) => {
-            console.log(error);
-            setError(error.message);
-          });
-    };
+          .catch(error => {
+              console.log(error);
+          })
+  }
   
     return (
       <div className="form-container">
         <h2 className="form-title">Sign Up</h2>
-        <form onSubmit={handleSignUp} action="">
+        <form onSubmit={handleRegister} action="">
         <div className="form-control">
             <label htmlFor="name">Name</label>
             <input type="text" name="name" id="" required />
@@ -66,12 +64,8 @@ const SignUp = () => {
             <input type="password" name="password" id="" required />
           </div>
           <div className="form-control">
-            <label htmlFor="password">Confirm Password</label>
-            <input type="password" name="confirm" id="" required />
-          </div>
-          <div className="form-control">
           <label htmlFor="photoUrl">Photo URL</label>
-          <input type="text" name="photoUrl" id="" />
+          <input type="text" name="photo" id="" />
         </div>
           <input className="btn-submit" type="submit" value="Sign Up" />
   
