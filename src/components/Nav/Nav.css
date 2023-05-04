@@ -36,7 +36,7 @@ nav.Nav a:hover{
     gap: 5px;
 }
 .profile img{
-    width: 30%;
+    width: 30px;
     border-radius: 50%;
 }
 .navigation {
@@ -45,4 +45,11 @@ nav.Nav a:hover{
 
 .Nav a.active {
     color: red;
+  }
+
+  @media (max-width: 768px){
+    .Nav{
+        height: fit-content;
+        flex-direction: column;
+    }
   }

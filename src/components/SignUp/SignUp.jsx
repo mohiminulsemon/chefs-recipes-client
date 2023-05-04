@@ -5,7 +5,7 @@ import { AuthContext } from '../../providers/AuthProvider';
 
 
 const SignUp = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser , setuserprofilepicture } = useContext(AuthContext);
 
   const [error, setError] = useState('');
 
@@ -18,7 +18,7 @@ const SignUp = () => {
 
   const handleRegister = event => {
       event.preventDefault();
-      setError();
+      // setError();
 
       const form = event.target;
       const name = form.name.value;
@@ -35,11 +35,18 @@ const SignUp = () => {
           return;
       }
 
-      createUser(email, password)
+      createUser(  email, password )
           .then(result => {
               const createdUser = result.user;
               console.log(createdUser);
               setError('');
+              setuserprofilepicture(name, photo)
+              .then(result=>{
+                console.log(result.displayName);
+              })
+              .catch(error => {
+                console.log(error);
+              })
               navigate(from, { replace: true })
           })
           .catch(error => {
@@ -64,7 +71,7 @@ const SignUp = () => {
             <input type="password" name="password" id="" required />
           </div>
           <div className="form-control">
-          <label htmlFor="photoUrl">Photo URL</label>
+          <label htmlFor="photoURL">Photo URL</label>
           <input type="text" name="photo" id="" />
         </div>
           <input className="btn-submit" type="submit" value="Sign Up" />
