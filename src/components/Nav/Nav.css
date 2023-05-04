@@ -52,4 +52,19 @@ nav.Nav a:hover{
         height: fit-content;
         flex-direction: column;
     }
+    .cards {
+         padding: 20px 40px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .banner-content {
+        text-align: center;
+        color: #c9b6a2;
+        font-size: 1.5rem;
+      }
+      .footer {
+        padding: 40px;
+        text-align: center;
+    }
   }

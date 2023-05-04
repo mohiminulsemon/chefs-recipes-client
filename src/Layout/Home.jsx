@@ -27,6 +27,7 @@ const Home = () => {
         <form action="">
             <label htmlFor=" ">enter your email :</label>
             <input type="email" id="enter your email : "></input>
+            <button id="btn-submit" type="submit">submit</button>
         </form>
       </section>
     </div>
