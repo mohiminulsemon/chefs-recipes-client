@@ -24,7 +24,7 @@ const Nav = () => {
       <div>
         {user ? (
           <span className="profile">
-            <img src={user.photoURL} alt="" />
+            <img src={user.photoURL} title={user.displayName} alt="" />
             <button className="btn" onClick={handleLogOut}>
               SignOut
             </button>
